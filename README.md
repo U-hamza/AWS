@@ -20,7 +20,7 @@ The following was used to create the VPC:
 - Resources to create: VPC only
 - Name: custom-vpc (You can name this anything)
 - IPv4 CIDR: 10.0.0.0/16
-- Click Create VPC
+- Click create VPC
 
 
 In this case the CIDR (Classless Inter-Domain Routing) 10.0.0.0/16 was used as the standard. (/16 not nessecary for smaller projects but used as standard for this project due to number of IP addresses it provides which is above 65,000)
@@ -29,4 +29,6 @@ In this case the CIDR (Classless Inter-Domain Routing) 10.0.0.0/16 was used as t
 ## 2. Create Subnets
 
 Go to Subnets → Create subnet
+
+
 
