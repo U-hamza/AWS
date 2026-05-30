@@ -38,7 +38,7 @@ Go to VPC → Subnets → Create subnet
 
 Select:
 
-- VPC: custom-vpc (Select the VPC that was made earliler)
+- VPC: custom-vpc (Select the VPC that was made earlier)
 
 Create a public subnet:
 
@@ -57,7 +57,6 @@ Click create subnet. Now you should have to subnets in your subnets sections. Pr
 
 <img width="358" height="183" alt="Screenshot 2026-05-30 at 14 24 39" src="https://github.com/user-attachments/assets/a04c41a0-16b6-4138-84ea-8ae4ab2686d2" />
 
-
 </br>
 
 
@@ -68,9 +67,9 @@ Go to Subnets → select public-subnet
 Actions → Edit subnet settings
 
 <img width="254" height="347" alt="Screenshot 2026-05-30 at 14 27 20" src="https://github.com/user-attachments/assets/7ce53bd9-b724-47ee-bec9-698af8ed8b13" />
-
-
 </br>
+
+
 
 
 Tick:
@@ -80,8 +79,35 @@ Tick:
 
 <img width="961" height="188" alt="Screenshot 2026-05-30 at 14 28 00" src="https://github.com/user-attachments/assets/83ba9ad3-027a-495f-92d7-0044aecf67cf" />
 
+</br>
+
+
+## 4. Create Internet Gateway
+
+
+Go to Internet Gateways → Create internet gateway
+
+- Name: custom-igw (Name it anything)
+- Click Create.
+
+<img width="1416" height="474" alt="Screenshot 2026-05-30 at 14 32 50" src="https://github.com/user-attachments/assets/14e466d7-455b-4335-98cb-2228663ef5ab" />]
 
 </br>
+
+
+Then select the internet gatewate by ticking the box:
+
+- Actions → Attach to VPC → choose your custom-vpc.
+
+An Internet Gateway lets public subnet resources connect to the internet when routing and public IPs are configured.
+
+
+## 5. 
+
+
+
+
+
 
 
 
