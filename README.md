@@ -67,15 +67,21 @@ Go to Subnets → select public-subnet
 
 Actions → Edit subnet settings
 
+<img width="254" height="347" alt="Screenshot 2026-05-30 at 14 27 20" src="https://github.com/user-attachments/assets/7ce53bd9-b724-47ee-bec9-698af8ed8b13" />
 
+
+</br>
 
 
 Tick:
 
-Enable auto-assign public IPv4 address
+- Enable auto-assign public IPv4 address
+- Click save
 
-Save.
+<img width="961" height="188" alt="Screenshot 2026-05-30 at 14 28 00" src="https://github.com/user-attachments/assets/83ba9ad3-027a-495f-92d7-0044aecf67cf" />
 
+
+</br>
 
 
 
