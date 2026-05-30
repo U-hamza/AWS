@@ -102,7 +102,77 @@ Then select the internet gatewate by ticking the box:
 An Internet Gateway lets public subnet resources connect to the internet when routing and public IPs are configured.
 
 
-## 5. 
+## 5. Create Public Route Table
+
+Go to Route Tables → Create route table
+
+- Name: public-rt (Use any name but choose something that you can differentiate between easily)
+- VPC: custom-vpc (Choose your custom VPC)
+
+After you have created the public route table: 
+
+- Open public-rt → Subnet associations → Edit subnet associations
+- Tick: public-subnet
+- Save
+
+<img width="269" height="272" alt="Screenshot 2026-05-30 at 14 43 10" src="https://github.com/user-attachments/assets/ef8a1bff-b1ba-4d7e-9cb1-62a44b0cbe15" />
+
+</br>
+
+
+Now go to Routes → Edit routes → Add route
+
+<img width="1260" height="205" alt="Screenshot 2026-05-30 at 14 44 48" src="https://github.com/user-attachments/assets/5b317a15-12b1-4656-b3cb-eeec399e4568" />
+</br>
+
+
+
+## 6. Create Nat Gateway
+
+Go to NAT Gateways → Create NAT Gateway
+
+The following was used:
+- Name: custom-nat
+- Subnet: public-subnet
+- Connectivity type: Public
+- Elastic IP allocation ID: click Allocate Elastic IP
+- Click Create NAT Gateway.
+
+A public NAT Gateway must be in a public subnet and uses an Elastic IP.
+
+
+<img width="1045" height="762" alt="Screenshot 2026-05-21 at 19 19 09" src="https://github.com/user-attachments/assets/9458efef-82ae-4c19-925e-baa24d7e2b45" />
+
+</br>
+
+
+## 7. Create Private Route Table
+
+Go to Route Tables → Create route table
+
+The steps are the similar to creating the public route table. 
+
+- Name: private-rt
+- VPC: custom-vpc
+- Open private-rt → Subnet associations → Edit subnet associations
+- Tick: private-subnet
+- Save
+
+
+Then add route to nat gateway:
+- Go to Routes → Edit routes → Add route
+- Before you add the route make sure your custom nat gateway is selected. 
+
+<img width="926" height="204" alt="Screenshot 2026-05-30 at 14 55 56" src="https://github.com/user-attachments/assets/232a7986-200c-463d-a1be-52fc3900f21d" />
+</br>
+
+
+Private subnet traffic can now go out to the internet through NAT, but the internet cannot directly start connections into the private instance.
+
+
+## 8. 
+
+
 
 
 
