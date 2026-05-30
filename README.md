@@ -7,7 +7,8 @@ Create a custom VPC with one public and one private subnet, set up the correct r
 
 ## Architectural Diagram
 
-<img width="735" height="539" alt="Screenshot 2026-05-24 at 11 19 22" src="https://github.com/user-attachments/assets/88fe1455-f0e2-49fc-a705-c285db35a88d" />
+<img width="745" height="563" alt="Screenshot 2026-05-30 at 14 00 27" src="https://github.com/user-attachments/assets/c42dd6db-0fba-49b9-99ba-82973137495c" />
+
 
 </br>
 
@@ -28,7 +29,54 @@ In this case the CIDR (Classless Inter-Domain Routing) 10.0.0.0/16 was used as t
 
 ## 2. Create Subnets
 
-Go to Subnets → Create subnet
+Go to VPC → Subnets → Create subnet
+
+<img width="1417" height="460" alt="Screenshot 2026-05-30 at 14 13 18" src="https://github.com/user-attachments/assets/d6f35244-3aea-449d-90aa-4f07af31c379" />
+
+</br>
+
+
+Select:
+
+- VPC: custom-vpc (Select the VPC that was made earliler)
+
+Create a public subnet:
+
+- Name: public-subnet (You can name it anything)
+- Availability Zone: choose one, e.g. eu-west-2a (Select the closest zone to your country/city)
+- CIDR: 10.0.1.0/24
+
+
+After you have made a public subnet then create a private subnet. 
+
+- Name: private-subnet
+- Same VPC
+- CIDR: 10.0.2.0/24
+
+Click create subnet. Now you should have to subnets in your subnets sections. Private and a public one. 
+
+<img width="358" height="183" alt="Screenshot 2026-05-30 at 14 24 39" src="https://github.com/user-attachments/assets/a04c41a0-16b6-4138-84ea-8ae4ab2686d2" />
+
+
+</br>
+
+
+## 3. Enable Public IP for Public subnet
+
+Go to Subnets → select public-subnet
+
+Actions → Edit subnet settings
+
+
+
+
+Tick:
+
+Enable auto-assign public IPv4 address
+
+Save.
+
+
 
 
 
