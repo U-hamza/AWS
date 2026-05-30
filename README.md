@@ -182,9 +182,17 @@ For a Public EC2 SG:
 
 Inbound rules should be as following:
 
-<img width="1387" height="523" alt="Screenshot 2026-05-21 at 19 43 02" src="https://github.com/user-attachments/assets/f38d7cd3-f037-40dd-b349-4ab73f8f9809" />
+<img width="692" height="459" alt="Screenshot 2026-05-30 at 15 07 28" src="https://github.com/user-attachments/assets/b4646cab-0e03-4af9-9912-929455f28912" />
+
 </br>
 
+
+Create a Private EC2 SG now using the same steps. (name it private-ec2-sg etc). Also the inbound rules will be different.
+- Select custom and then click on your source and choose your public sg for both SSH and HTTP
+
+<img width="696" height="209" alt="Screenshot 2026-05-30 at 15 13 59" src="https://github.com/user-attachments/assets/ba7e1ef9-a2ba-4985-bf4c-cb36dbd264bb" />
+
+</br>
 
 
 
