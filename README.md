@@ -170,7 +170,21 @@ Then add route to nat gateway:
 Private subnet traffic can now go out to the internet through NAT, but the internet cannot directly start connections into the private instance.
 
 
-## 8. 
+## 8. Create Security Groups
+
+You will have to create a private and a public one.
+
+Go to EC2 → Security Groups → Create security group
+
+For a Public EC2 SG:
+- Name: public-ec2-sg
+- VPC: Choose your VPC
+
+Inbound rules should be as following:
+
+<img width="1387" height="523" alt="Screenshot 2026-05-21 at 19 43 02" src="https://github.com/user-attachments/assets/f38d7cd3-f037-40dd-b349-4ab73f8f9809" />
+</br>
+
 
 
 
