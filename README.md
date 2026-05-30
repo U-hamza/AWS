@@ -194,7 +194,11 @@ Create a Private EC2 SG now using the same steps. (name it private-ec2-sg etc). 
 
 </br>
 
+Security groups control allowed inbound and outbound traffic for EC2 instances.
 
+
+
+## 9. Launch Public EC2 Instance
 
 
 
