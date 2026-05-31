@@ -240,9 +240,61 @@ Similar to the other instance, launch a private one now.
 
 
 
+## 11. Connect & Test Public EC2 
+
+You can use the aws console terminal or your local machine. 
+
+The following code needs to be used to allow access and modifications.
+
+First run this: 
+- chmod 400 your-key.pem
+
+Then this: 
+- ssh -i your-key.pem ec2-user@PUBLIC_EC2_PUBLIC_IP
+
+your-key.pem is the key pair that was saved earlier. Also, these commmands are to be used only if you're located within the key pair directory. If not then use the root paths but if you cd into your directory (where the key pair is) then use the above. 
+
+Your Public EC2 - Public IP can be found by going to instances and clicking on the public-EC2. It will then show all the details below in your instance. 
+
+Test the instance on your terminal: 
+- use: curl https://amazon.com
+
+If your instance is running properly then you should see HTML script on your screen. 
+
+
+## 12. Connect & Test Private EC2
+
+You can only access the private EC2 via the public EC2.
+
+The following was done: 
+
+cd ~/Downloads  (The key pair file was located in Downloads)
+ssh-add key.pem
+ssh -A -i key.pem ec2-user@PUBLIC_EC2_PUBLIC_IP
+
+This will then add the key pair to the public EC2 which allow you to SSH into the private EC2. 
+
+Use this to access private instance:
+ssh ec2-user@private_ip
+
+This should then direct you to your private EC2. You will see the EC2 promt will change when you enter your private ec2. On your terminal the ID's for the istances will change indicating that you have accessed the private instance. 
 
 
 
+Finally test it using:
+Curl https://amazon.com
+
+
+If this returns a html script/page then your private EC2 instance is running fine and your private EC2 has outbound internet through the NAT Gateway.
+
+<img width="451" height="122" alt="Screenshot 2026-05-31 at 15 56 25" src="https://github.com/user-attachments/assets/cfaeea8e-8751-4b10-a599-8c3c4889e742" />
+
+</br>
+
+
+
+## Challenges
+During this project, I encountered several challenges while designing and configuring the AWS network infrastructure. These included troubleshooting SSH connectivity issues, managing EC2 key pairs, configuring route tables correctly, and ensuring the NAT Gateway provided outbound internet access to the private instance. I also gained a deeper understanding of VPC networking concepts such as CIDR ranges, subnet design, security groups, and the relationship between Internet Gateways and NAT Gateways. Working through these challenges strengthened my troubleshooting skills and improved my confidence in building secure and scalable AWS environments.
 
 
 
