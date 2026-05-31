@@ -267,10 +267,9 @@ If your instance is running properly then you should see HTML script on your scr
 You can only access the private EC2 via the public EC2.
 
 The following was done: 
-
-cd ~/Downloads  (The key pair file was located in Downloads)
-ssh-add key.pem
-ssh -A -i key.pem ec2-user@PUBLIC_EC2_PUBLIC_IP
+-cd ~/Downloads  (The key pair file was located in Downloads)
+- ssh-add key.pem
+- ssh -A -i key.pem ec2-user@PUBLIC_EC2_PUBLIC_IP
 
 This will then add the key pair to the public EC2 which allow you to SSH into the private EC2. 
 
