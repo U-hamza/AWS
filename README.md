@@ -200,6 +200,48 @@ Security groups control allowed inbound and outbound traffic for EC2 instances.
 
 ## 9. Launch Public EC2 Instance
 
+Go to EC2 → Instances
+
+If it your first time launching an instance then step by step walkthroughs are available on the website. 
+
+For this assignment the following was used:
+- Name: public-ec2
+- AMI: Amazon Linux 2023
+- Instance type: t2.micro or t3.micro
+- Key pair: create or select one
+- VPC: custom-vpc
+- Subnet: public-subnet
+- Auto-assign public IP: Enable
+- Security group: public-ec2-sg
+- Launch Instance
+- <img width="925" height="697" alt="Screenshot 2026-05-31 at 15 06 12" src="https://github.com/user-attachments/assets/91de22f1-3a84-4504-8f42-35de8334aefc" />
+
+</br>
+
+
+
+NOTE: Key pairs are crucial for keeping your instances safe and allowing it to run only run when the key is used. When you create a key pair it will download to your local machine. Do not re-download as you could face difficulties later when trying to use it. This key will then be used later when trying to run your EC2 instance. Also, know where the key pair is saved so you can easily locate it. 
+
+
+
+## 10. Launch a private EC2 Instance
+
+Similar to the other instance, launch a private one now. 
+
+- Name: private-ec2
+- AMI: Amazon Linux 2023
+- Instance type: t2.micro or t3.micro
+- Key pair: use the same key pair
+- VPC: custom-vpc
+- Subnet: private-subnet
+- Auto-assign public IP: Disable (This is very important as we do not want any inbound traffic to the private EC2 instance)
+- Security group: private-ec2-sg
+- Launch instance
+
+
+
+
+
 
 
 
