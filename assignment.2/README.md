@@ -9,6 +9,42 @@ https://github.com/user-attachments/assets/70fbbb65-3700-4955-a0a9-b5eb08b10610
 
 
 
+# Assingment Layout
+
+1. Create the VPC
+2. Create public and private subnets
+3. Create route tables, Internet Gateway, and NAT Gateway (if using private subnets)
+4. Create Security Groups
+5. Launch the EC2 instances
+6. Create the Target Group
+7. Create the ALB
+8. Register the instances with the Target Group
+9. Test
+
+
+
+Internet
+    │
+    ▼
+Internet Gateway
+    │
+    ▼
+Public Route Table
+    │
+    ├── Public Subnet AZ-a (ALB)
+    ├── Public Subnet AZ-b (ALB)
+    └── NAT Gateway
+
+    ▼
+Private Route Table
+    │
+    ├── Private Subnet AZ-a (EC2-1)
+    └── Private Subnet AZ-b (EC2-2)
+
+
+
+
+    
 
 
 
