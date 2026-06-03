@@ -1,3 +1,4 @@
+
 # Architectural Diagram
 
 
@@ -23,23 +24,7 @@ https://github.com/user-attachments/assets/70fbbb65-3700-4955-a0a9-b5eb08b10610
 
 
 
-Internet
-    │
-    ▼
-Internet Gateway
-    │
-    ▼
-Public Route Table
-    │
-    ├── Public Subnet AZ-a (ALB)
-    ├── Public Subnet AZ-b (ALB)
-    └── NAT Gateway
-
-    ▼
-Private Route Table
-    │
-    ├── Private Subnet AZ-a (EC2-1)
-    └── Private Subnet AZ-b (EC2-2)
+<img width="300" height="300" alt="Screenshot 2026-06-03 at 22 22 09" src="https://github.com/user-attachments/assets/8b985afe-7d47-4e6f-bc69-22dd4942378a" />
 
 
 
