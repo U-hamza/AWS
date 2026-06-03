@@ -1,10 +1,3 @@
-## Assignment 1
-
-
-## Assignment 1 Objective
-Create a custom VPC with one public and one private subnet, set up the correct routing for internet access, and deploy EC2 instances across them.
-
-
 ## Architectural Diagram
 
 <img width="745" height="563" alt="Screenshot 2026-05-30 at 14 00 27" src="https://github.com/user-attachments/assets/c42dd6db-0fba-49b9-99ba-82973137495c" />
