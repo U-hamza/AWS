@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/70fbbb65-3700-4955-a0a9-b5eb08b10610
 
 
 
-# Assingment Layout
+# Assignment Layout
 
 1. Create the VPC
 2. Create public and private subnets
