@@ -119,7 +119,7 @@ After all the above was correct and health checks were healthy, the ALB DNS name
 
 http://your-alb-dns-name
 
-If the html text from the user-script was displaying then the infrastructure has been deployed correctly. Also, refreshing should alternate between the two user scripts and displaying different text. 
+If the html text from the user-script was displaying then the infrastructure had been deployed correctly. Also, refreshing should alternate between the two user scripts and display different text. 
 
 
     
