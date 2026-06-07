@@ -108,7 +108,7 @@ The following configurations were used for the ALB:
 - Subnets: The two public subnets in different AZs
 - Security Group: ALB SG
 
-Lister was over:
+Listner was over:
 - HTTP: 80
 - Forward to: your target group.
 
