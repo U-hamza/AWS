@@ -59,17 +59,67 @@ The public route table needs to be in the correct VPC. It needs to be connected 
 Both public subnets need to be associated with the public route table. 
 
 
-Privtae: 
-Needs to be in the VPC and connected to the NAT Gateway. Both private subnets should be associated with the route table and this where both of the EC2 instances will be located. 
+Private: 
+Needs to be in the VPC and connected to the NAT Gateway. Both private subnets should be associated with the route table and this is where both of the EC2 instances will be located. 
 
 
 
 # Security Groups 
+One ALB and one EC2 security group is needed. 
+
+- ALB-sg: inbound rules were set to HTTP over port 80 and Source: 0.0.0.0/0
+- EC2-sg: inbound rules were set to HTTP over port 80 and Source: ALB-sg
+
+
+# EC2 Instances
+Two EC2 instances were created in two different private subnets in different availability zones.
+
+- EC2-1: was made in the custom vpc using private-subnet 1, and using EC2-sg. As this is in a private subnet auto-assign public IP needs to be off. User-script was inserted in the additional options section.
+
+- EC2-2: in the custom VPC using public-subnet 2, and using EC2-sg. The same user-script was inserted except the html line which was different.
+
+<img width="554" height="597" alt="Screenshot 2026-06-07 at 15 05 11" src="https://github.com/user-attachments/assets/21a30928-6d64-4320-8b2f-d735524ca5b4" />
 
 
 
 
+# Target groups
+A target group was made using the following:
+- Target type: Instances
+- Protocol: HTTP
+- Port: 80
+- VPC: Same VPC as EC2 instances
+- Health check path: /
 
+Then both EC2 instances were registered with the target group. When both are registered ensure the health status is healthy for both. 
+
+<img width="1141" height="299" alt="Screenshot 2026-06-02 at 18 26 20" src="https://github.com/user-attachments/assets/fbc118a9-4d49-47cb-9037-f5538a501ca6" />
+
+
+
+
+# Application Load Balancer
+When you go onto load balancers, a few of other options will also display. For this assignment an ALB was used.
+The following configurations were used for the ALB:
+
+- Scheme: Internet-facing
+- IP address type: IPv4
+- VPC: Same VPC
+- Subnets: The two public subnets in different AZs
+- Security Group: ALB SG
+
+Lister was over:
+- HTTP: 80
+- Forward to: your target group.
+
+
+
+# Testing
+After all the above was correct and health checks were healthy, the ALB DNS name was run in the browser using:
+
+http://your-alb-dns-name
+
+If the html text from the user-script was displaying then the infrastructure has been deployed correctly. Also, refreshing should alternate between the two user scripts and displaying different text. 
 
 
     
@@ -77,34 +127,7 @@ Needs to be in the VPC and connected to the NAT Gateway. Both private subnets sh
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Challenges Faced & How I Overcame Them
-- Designing the VPC and subnet structure – Initially, it was challenging to determine the correct CIDR ranges and subnet layout. I overcame this by carefully planning the network architecture, using separate public and private subnets across multiple Availability Zones to ensure proper segmentation and high availability.
 - Configuring routing and internet access – The private EC2 instances were unable to access the internet due to an incorrect route table configuration that resulted in a blackhole route. I resolved this by troubleshooting the route tables, recreating the correct route to the NAT Gateway, and verifying that the Internet Gateway and NAT Gateway were configured correctly.
 - Deploying web servers on private EC2 instances – The Apache installation initially failed because the instances could not reach the Amazon Linux repositories. After fixing the NAT Gateway and routing issues, I successfully deployed Apache using user-data scripts and verified that the web servers were running correctly.
 - Troubleshooting unhealthy targets in the Target Group – Both EC2 instances initially failed the ALB health checks. I investigated the issue by reviewing system logs, confirming that Apache was installed and running, and ensuring the health check path and target group settings were configured correctly.
