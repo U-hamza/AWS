@@ -1,6 +1,9 @@
 
 # Architectural Diagram
 
+<img width="602" height="570" alt="Screenshot 2026-06-13 at 17 40 10" src="https://github.com/user-attachments/assets/943b5f4a-267b-417d-8d6e-4d80bbb27b90" />
+
+
 
 # Project Test Result 
 
