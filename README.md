@@ -6,5 +6,5 @@ Designed and implemented a custom AWS network from scratch by creating a Virtual
 
 
 # Assignment 2
-Deployed two EC2 instances behind an AWS Application Load Balancer (ALB) to create a scalable and highly available architecture. Configured health checks and security groups to ensure traffic was distributed correctly and that EC2 instances remained inaccessible directly from the internet. The project strengthened my understanding of load balancing, high availability, security group isolation, and AWS networking best practices.
+Deployed two EC2 instances behind an AWS Application Load Balancer (ALB) to create a scalable and highly available architecture. Configured health checks and security groups to ensure traffic was distributed correctly and that EC2 instances remained inaccessible directly from the internet. The project strengthened my understanding of load balancing, security group isolation, and AWS networking best practices.
 
